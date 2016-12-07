@@ -1,29 +1,28 @@
 <%= form_for(@fb_page) do |f| %>
-<% if @fb_page.errors.any? %>
-<div id="error_explanation">
-    <h2><%= pluralize(@fb_page.errors.count, "error") %>
-        prohibited this facebook page from being saved:</h2>
-    <ul>
-        <% @fb_page.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
-</div>
-<% end %>
-
-<div class="field">
-    <%= f.label :name, "Name (optional)"%><br>
-    <%= f.text_field :name %>
-</div>
-<div class="field">
-    <%= f.label :page_id, "Page ID"%><br>
-    <%= f.text_field :page_id %>
-</div>
-<div class="field">
-    <%= f.label :post_amount %><br>
-    <%= f.text_field :post_amount %>
-</div>
-<div class="actions">
-    <%= f.submit %>
-</div>
+  <% if @fb_page.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@fb_page.errors.count, "error") %>
+            prohibited this facebook page from being saved:</h2>
+        <ul>
+            <% @fb_page.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+  <% end %>
+  <div class="field">
+      <%= f.label :name, "Name (optional)"%><br>
+      <%= f.text_field :name %>
+  </div>
+  <div class="field">
+      <%= f.label :page_id, "Page ID"%><br>
+      <%= f.text_field :page_id %>
+  </div>
+  <div class="field">
+      <%= f.label :post_amount %><br>
+      <%= f.text_field :post_amount %>
+  </div>
+  <div class="actions">
+      <%= f.submit %>
+  </div>
 <% end %>

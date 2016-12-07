@@ -10,22 +10,18 @@
         <div id="container">
             <div class="navbar-text pull-right">
                 <% if current_user %>
-                Signed in as
-                <strong><%= current_user.name %></strong>!
-                <%= link_to "Sign out", signout_path, id: "sign_out" %>
-            <% else %>
-                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                  Signed in as <strong><%= current_user.name %></strong>!
+                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                <% else %>
+                  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
                 <% end %>
             </div>
-
             <% if notice %>
-            <p class="alert alert-success"><%= notice %></p>
+              <p class="alert alert-success"><%= notice %></p>
             <% end %>
             <% if alert %>
-            <p class="alert alert-danger"><%= alert %></p>
+              <p class="alert alert-danger"><%= alert %></p>
             <% end %>
-
             <%= yield %>
-
-        </body>
-    </html>
+      </body>
+</html>
