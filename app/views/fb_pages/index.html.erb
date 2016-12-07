@@ -1,0 +1,29 @@
+<h1>List of facebook pages</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Page ID</th>
+            <th>Post Amount</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @fb_pages.each do |fb_page| %>
+        <tr>
+            <td><%= fb_page.name %></td>
+            <td><%= fb_page.page_id %></td>
+            <td><%= fb_page.post_amount %></td>
+            <td><%= link_to 'Show', fb_page %></td>
+            <td><%= link_to 'Edit', edit_fb_page_path(fb_page) %></td>
+            <td><%= link_to 'Destroy', fb_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<br>
+
+<%= link_to 'Add a new facebook page', new_fb_page_path %>
+|
+<%= link_to "Download as CSV", fb_pages_path(format: "csv") %>
